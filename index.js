@@ -144,15 +144,18 @@ allDiscount.addEventListener("click", () => {
 });
 
 const searchInput = document.getElementById("input-search");
+searchInput.maxLength = 125;
 const searchForm = document.getElementById("search-form");
+
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  const allCards = document.querySelectorAll(".card");
-  allCards.forEach((item) => {
-    item.remove();
-  });
-  createCards(
-    `https://bsale-back-falvarez.herokuapp.com/search/${searchInput.value}`
-  );
+  if (searchInput.value.trim().length > 0) {
+    const allCards = document.querySelectorAll(".card");
+    allCards.forEach((item) => {
+      item.remove();
+    });
+    createCards(
+      `https://bsale-back-falvarez.herokuapp.com/search/${searchInput.value}`
+    );
+  }
 });

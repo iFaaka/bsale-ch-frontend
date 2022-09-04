@@ -64,7 +64,7 @@ table {
     font-size: 2vh;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 770px) {
     aside {
         display: none;
     }

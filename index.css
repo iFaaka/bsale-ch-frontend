@@ -24,6 +24,11 @@
 
 }
 
+
+.navbar-link {
+  margin-right:  4vh;
+  text-decoration: none;
+}
 /*NavBar */
 /*NavBar */
 
@@ -161,10 +166,17 @@
 /* Footer section */
 footer {
   display: flex;
+  justify-content: space-between;
   position: static;
   bottom: 0;
   background-color: #252130;
-  color: #fff
+  color: #fff;
+  padding: 2vh ;
+}
+
+.footer-a {
+  text-decoration: none;
+  color: white;
 }
 
 /* Footer section */

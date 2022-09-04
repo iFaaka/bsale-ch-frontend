@@ -7,6 +7,7 @@
 body {
     display: flex;
     font-family: sans-serif;
+
 }
 
 aside {
@@ -68,5 +69,7 @@ table {
     aside {
         display: none;
     }
-
+    body {
+        padding: 2vh;
+    }
 }

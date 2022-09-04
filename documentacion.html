@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./documentacion.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <aside>
+        <span>En esta pagina encontraras: </span>
+        <div class="aside-div">
+            <a href="#bienvenida">JSON de Bienvenida</a>
+            <a href="#direccion-api">Direccion de la API</a>
+            <a href="#get-products">GET de Productos</a>
+            <a href="#get-categ">GET de Nombres de categorias</a>
+            <a href="#get-products-by-category">GET de Productos por categoria</a>
+            <a href="#get-search-product">GET de Producto por buscador</a>
+        </div>
+
+    </aside>
+
+<section>
+    <h1>BackEnd Bsale - Facundo Alvarez</h1>
+    <article>
+        <h4 id="bienvenida">JSON de Bienvenida</h4>
+
+        
+            <span>Al hacer una peticion GET al inicio, ("/"), recibimos un mensaje de bienvenida.</span>
+            <code>
+                <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">¡Hola! Noto <span class="hljs-keyword" style="color: rgb(173, 43, 238);">que</span> estas usando mi API, lamentablemente <span class="hljs-keyword" style="color: rgb(173, 43, 238);">en</span> <span class="hljs-keyword" style="color: rgb(173, 43, 238);">la</span> pagina <span class="hljs-keyword" style="color: rgb(173, 43, 238);">de</span> inicio <span class="hljs-keyword" style="color: rgb(173, 43, 238);">no</span> devuelve nada mas <span class="hljs-keyword" style="color: rgb(173, 43, 238);">que</span> este bonito
+                    mensaje. Podes ver <span class="hljs-keyword" style="color: rgb(173, 43, 238);">en</span> <span class="hljs-keyword" style="color: rgb(173, 43, 238);">la</span> documentacion <span class="hljs-keyword" style="color: rgb(173, 43, 238);">que</span> otras rutas tengo :)</pre>
+            </code>
+
+
+        <h4 id="direccion-api">Direccion de la API</h4>
+            <p class="bold"> La direccion para trabajar con mi API es https://bsale-back-falvarez.herokuapp.com/</p>
+
+        <h4 id="get-products">GET de Productos</h4>
+            <span>Para recibir el total de los productos se debe realiar una peticion a '/products' y este devuelve un JSON</span>
+            <code>
+                <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">[
+                    {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">5</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"ENERGETICA MR BIG"</span>,
+                        <span class="hljs-attr">"url_image"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"x1.jpg"</span>,
+                        <span class="hljs-attr">"price"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1490</span>,
+                        <span class="hljs-attr">"discount"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">20</span>,
+                        <span class="hljs-attr">"category"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1</span>
+                    },
+                    {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">6</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"ENERGETICA RED BULL"</span>,
+                        <span class="hljs-attr">"url_image"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"x2.jpg"</span>,
+                        <span class="hljs-attr">"price"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1490</span>,
+                        <span class="hljs-attr">"discount"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">0</span>,
+                        <span class="hljs-attr">"category"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1</span>
+                    }
+                ]</pre>
+            </code>
+    </article>
+
+    
+
+    <article>
+        <h4 id="get-categ">GET de Nombres de categorias</h4>
+            <span>Para recibir el total de los productos se debe realiar una peticion a '/category' y este devuelve un JSON</span>
+            <code>
+                <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">[
+                    {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"bebida energetica"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">2</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"pisco"</span>
+                    },
+                    {
+                        <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">3</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"ron"</span>
+                    }
+            ]</pre>
+            </code>
+    </article>
+    
+    <article>
+        <h4 id="get-products-by-category">GET de Productos por categoria</h4>
+            <span>Para recibir todos los productos que pertenecen a una categoria se debe realizar una peticion a '/category/:id' siendo :id el identificador de cada categoria</span>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>Bebida energetica</td>
+                </tr>   
+                <tr>
+                    <td>2</td>
+                    <td>Pisco</td>
+                </tr>   
+                <tr>
+                    <td>3</td>
+                    <td>Ron</td>
+                </tr>   
+                <tr>
+                    <td>4</td>
+                    <td>Bebida</td>
+                </tr>   
+                <tr>
+                    <td>5</td>
+                    <td>Snack</td>
+                </tr>   
+                <tr>
+                    <td>6</td>
+                    <td>Cerveza</td>
+                </tr>   
+                <tr>
+                    <td>7</td>
+                    <td>Vodka</td>
+                </tr>   
+        </table>
+    </article>
+    
+    <article>
+        <h4 id="get-search-product">GET de Producto por buscador</h4>
+            <span>Para obtener un producto especifico buscando por su nombre se debe realizar una peticion GET a '/search/:name' siendo name el producto deseado</span>
+        
+            <code>
+            <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">
+                <span class="hljs-keyword" style="color: rgb(173, 43, 238);">const</span> <span class="hljs-literal" style="color: rgb(135, 113, 29);">result</span> = <span class="hljs-type" style="color: rgb(135, 113, 29);">Peticion</span> <span class="hljs-type" style="color: rgb(135, 113, 29);">GET</span>: /search/<span class="hljs-type" style="color: rgb(135, 113, 29);">ALTO</span> <span class="hljs-type" style="color: rgb(135, 113, 29);">DEL</span> <span class="hljs-type" style="color: rgb(135, 113, 29);">CARMEN</span>.
+                <span class="hljs-literal" style="color: rgb(135, 113, 29);">result</span> : 
+                [
+                    {
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">8</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"PISCO ALTO DEL CARMEN 35º"</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"url_image"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"https://dojiw2m9tvv09.cloudfront.net/11132/product/alto8532.jpg"</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"price"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">7990</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"discount"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">10</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"category"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">2</span>
+                    },
+                    {
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">9</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"PISCO ALTO DEL CARMEN 40º "</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"url_image"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"https://dojiw2m9tvv09.cloudfront.net/11132/product/alto408581.jpg"</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"price"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">5990</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"discount"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">0</span>,
+                        <span class="hljs-string" style="color: rgb(41, 163, 41);">"category"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">2</span>
+                    }
+                ]</span>
+                </pre>
+            </code>
+    </article>
+  
+</section>
+</body>
+</html>

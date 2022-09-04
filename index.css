@@ -1,0 +1,188 @@
+/* Normalize */
+/* Normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Normalize */
+/* Normalize */
+
+/*NavBar */
+/*NavBar */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+  height: 5vh;
+
+}
+
+/*NavBar */
+/*NavBar */
+
+/* Title */
+/* Title */
+
+#title-section {
+  text-align: center;
+
+}
+
+
+/* Title */
+/* Title */
+
+
+/* Category section */
+/* Category section */
+
+#categ-section {
+  position: sticky;
+  top: 5vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  background-color: #fff;
+}
+
+
+.btn-categ {
+  /* Collapse category menu*/
+  background-color: #31b9dd;
+  color: #fff;
+  font-weight: 300;
+}
+
+
+.categ-button {
+  /* Individual category*/
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+  padding-right: 4vh;
+
+}
+
+#search-form {
+  width: 50%;
+  align-self: center;
+  gap: 3vh;
+  margin: 3vh 0;
+}
+
+/* #select-category {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh 3vw;
+} */
+
+#categ-list {
+  padding: 0;
+  margin: 0;
+}
+
+.collapse,
+.collapsing,
+.collapse.show {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding-bottom: 1vh;
+
+}
+
+
+/* Category section */
+/* Category section */
+
+
+/* Card Section */
+/* Card Section */
+
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
+  margin-bottom: 10vh;
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3vh;
+  max-width: 20vw;
+}
+
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.price-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.price-dashed {
+  text-decoration: line-through;
+  color: red;
+}
+
+.item-price::before,
+.item-discount::before {
+  content: '$';
+}
+
+/* Card Section */
+/* Card Section */
+
+/* Footer section */
+/* Footer section */
+footer {
+  display: flex;
+  position: static;
+  bottom: 0;
+  background-color: #252130;
+  color: #fff
+}
+
+/* Footer section */
+/* Footer section */
+
+/* Responsive section */
+/* Responsive section */
+
+@media (max-width: 500px) {
+  #cards-container {
+    flex-direction: column;
+
+  }
+
+  .card {
+    max-width: none;
+  }
+}
+
+/* Responsive section */
+/* Responsive section */

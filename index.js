@@ -1,11 +1,4 @@
-const loading = () => {
-  const load = document.createElement("p");
-  load.id = "loading";
-  const loadContent = document.createTextNode("Loading...");
-  load.appendChild(loadContent);
-  return load;
-};
-
+/* Crea la lista de categorias, permitiendo que la aplicacion sea expansible */
 const createCategNav = async () => {
   const categList = document.getElementById("categ-list");
 
@@ -14,6 +7,7 @@ const createCategNav = async () => {
   );
   const data = await response.json();
 
+  /* Mapeo las categrias para darles formato y agregarle un eventListener para filtrar los productos segun corresponda */
   await data.forEach((item) => {
     const button = document.createElement("button");
 
@@ -35,17 +29,22 @@ const createCategNav = async () => {
   });
 };
 
+/* Ejecuto la creacion de categorias */
 createCategNav();
 
+/* Funcion general que aplica el descuento */
 const calculateDiscount = (price, discount) => {
   if (discount > 0) {
     return price - (price * discount) / 100;
   }
 };
 
+/* Funcion que se encarga de crear las tarjetas de los items */
+/* La usaremos con distintos consumos de API, por eso es mejor pasarle directamente la URL que tiene que construir */
 const createCards = async (url) => {
   const cardsContainer = document.getElementById("cards-container");
 
+  /* Bloque de codigo que se encarga de entregar un indicador de carga hasta recibir info de la BD */
   const load = document.createElement("p");
   load.id = "loading";
   const loadContent = document.createTextNode("Loading...");
@@ -53,16 +52,21 @@ const createCards = async (url) => {
   cardsContainer.appendChild(load);
 
   const response = await fetch(`${url}`);
-
   const data = await response.json();
 
+  /* Una ves obtenida la data de la BD, elimina el loading del viewport  */
   document.getElementById("loading").remove();
+
+  /* Mapeamos la data recibida por fetch */
   await data.forEach((item) => {
+    /* Creamos la card de cada producto y le agregamos clases de Bootstrap */
     const card = document.createElement("div");
     card.classList.add("card");
     card.classList.add("container-fluid");
 
-    /*     Get the image to the card, if it hasn't any image, it use a google foto */
+    /* Recibe la imagen del producto, si esta existe la agrega a la card, 
+    sino aplica una generica. Tambien adquiere clases de Bootstrap*/
+
     const divImg = document.createElement("div");
     divImg.id = "div-img";
     const img = document.createElement("img");
@@ -76,16 +80,19 @@ const createCards = async (url) => {
     divImg.appendChild(img);
     card.appendChild(divImg);
 
+    /* Para facilitar el uso de bootstrap, creamos un div para el content */
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
 
-    /* Title of the card */
+    /* Titulo de la carta */
     const title = document.createElement("p");
     title.classList.add('card-title"');
     const titleContent = document.createTextNode(`${item.name}`);
     title.appendChild(titleContent);
     cardBody.appendChild(title);
 
+    /* 
+    Formato del precio del producto */
     const priceDiv = document.createElement("div");
     priceDiv.classList.add("price-div");
 
@@ -95,7 +102,7 @@ const createCards = async (url) => {
     price.appendChild(priceContent);
     priceDiv.appendChild(price);
 
-    /*     If the product has a discount, we can see it */
+    /*    Si el producto contiene descuento, formateamos ambos nuevamente, precio y precio con descuento */
     if (item.discount > 0) {
       price.classList.add("price-dashed");
       const discount = document.createElement("p");
@@ -123,8 +130,10 @@ const createCards = async (url) => {
   });
 };
 
+/* Por default, recibe todos los productos y crea las cards correspondiente */
 createCards("https://bsale-back-falvarez.herokuapp.com/products");
 
+/* Agrega eventListener para la categoria de todos los productos */
 const allProducts = document.getElementById("all-product");
 allProducts.addEventListener("click", () => {
   const allCards = document.querySelectorAll(".card");
@@ -134,6 +143,7 @@ allProducts.addEventListener("click", () => {
   createCards(`https://bsale-back-falvarez.herokuapp.com/products`);
 });
 
+/* Agrega eventListener para la categoria de todos los productos con descuento */
 const allDiscount = document.getElementById("all-discount");
 allDiscount.addEventListener("click", () => {
   const allCards = document.querySelectorAll(".card");
@@ -143,6 +153,9 @@ allDiscount.addEventListener("click", () => {
   createCards(`https://bsale-back-falvarez.herokuapp.com/discount`);
 });
 
+/* Recibe el valor que tiene el input y busca el producto deseado
+Tambien evita que se llene al maximo de caracteres, optimizando la busqueda y evita que se 
+hagan busquedas vacias */
 const searchInput = document.getElementById("input-search");
 searchInput.maxLength = 125;
 const searchForm = document.getElementById("search-form");

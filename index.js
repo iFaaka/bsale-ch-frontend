@@ -131,26 +131,27 @@ const createCards = async (url) => {
 };
 
 /* Por default, recibe todos los productos y crea las cards correspondiente */
-createCards("https://bsale-back-falvarez.herokuapp.com/products");
+createCards(`https://bsale-back-falvarez.herokuapp.com/products`);
 
-/* Agrega eventListener para la categoria de todos los productos */
-const allProducts = document.getElementById("all-product");
-allProducts.addEventListener("click", () => {
+/* Funcion para crear las tarjetas segun el parametro pasado */
+const getAllProd = (url) => {
   const allCards = document.querySelectorAll(".card");
   allCards.forEach((item) => {
     item.remove();
   });
-  createCards(`https://bsale-back-falvarez.herokuapp.com/products`);
+  createCards(`https://bsale-back-falvarez.herokuapp.com/${url}`);
+};
+
+/* Agrega eventListener para la categoria de todos los productos */
+const allProducts = document.getElementById("all-product");
+allProducts.addEventListener("click", () => {
+  getAllProd("products");
 });
 
 /* Agrega eventListener para la categoria de todos los productos con descuento */
 const allDiscount = document.getElementById("all-discount");
 allDiscount.addEventListener("click", () => {
-  const allCards = document.querySelectorAll(".card");
-  allCards.forEach((item) => {
-    item.remove();
-  });
-  createCards(`https://bsale-back-falvarez.herokuapp.com/discount`);
+  getAllProd("discount");
 });
 
 /* Recibe el valor que tiene el input y busca el producto deseado
@@ -163,12 +164,14 @@ const searchForm = document.getElementById("search-form");
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (searchInput.value.trim().length > 0) {
-    const allCards = document.querySelectorAll(".card");
-    allCards.forEach((item) => {
-      item.remove();
-    });
-    createCards(
-      `https://bsale-back-falvarez.herokuapp.com/search/${searchInput.value}`
-    );
+    getAllProd(`search/${searchInput.value}`);
   }
+});
+
+/* Agrega una funcion al logo para volver al home, recibiendo todos los productos */
+const logoImage = document.querySelector(".navbar-brand");
+
+logoImage.addEventListener("click", () => {
+  searchInput.value = "";
+  getAllProd("products");
 });

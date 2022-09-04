@@ -1,9 +1,3 @@
-/* code {
-    background-color: lightgrey;
-    display: block;
-    padding: 4vh;
-} */
-
 body {
     display: flex;
     font-family: sans-serif;
@@ -48,8 +42,11 @@ h1 {
 }
 
 h4 {
+    margin-top: 5vh !important;
     font-size: 2.5vh;
 }
+
+
 
 table {
     border: solid 3px grey;
@@ -65,10 +62,12 @@ table {
     font-size: 2vh;
 }
 
+
 @media (max-width: 770px) {
     aside {
         display: none;
     }
+
     body {
         padding: 2vh;
     }

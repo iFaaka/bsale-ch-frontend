@@ -32,7 +32,7 @@
         <h4 id="bienvenida">JSON de Bienvenida</h4>
 
         
-            <span>Al hacer una peticion GET al inicio, ("/"), recibimos un mensaje de bienvenida.</span>
+            <span class="code-descrip">Al hacer una peticion GET al inicio, ("/"), recibimos un mensaje de bienvenida.</span>
             <code>
                 <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">¡Hola! Noto <span class="hljs-keyword" style="color: rgb(173, 43, 238);">que</span> estas usando mi API, lamentablemente <span class="hljs-keyword" style="color: rgb(173, 43, 238);">en</span> <span class="hljs-keyword" style="color: rgb(173, 43, 238);">la</span> pagina <span class="hljs-keyword" style="color: rgb(173, 43, 238);">de</span> inicio <span class="hljs-keyword" style="color: rgb(173, 43, 238);">no</span> devuelve nada mas <span class="hljs-keyword" style="color: rgb(173, 43, 238);">que</span> este bonito
                     mensaje. Podes ver <span class="hljs-keyword" style="color: rgb(173, 43, 238);">en</span> <span class="hljs-keyword" style="color: rgb(173, 43, 238);">la</span> documentacion <span class="hljs-keyword" style="color: rgb(173, 43, 238);">que</span> otras rutas tengo :)</pre>
@@ -46,7 +46,7 @@
             </li>
         </ul>
  <h4 id="get-products">GET de Productos</h4>
-            <span>Para recibir el total de los productos se debe realiar una peticion a '/products' y este devuelve un JSON</span>
+            <span class="code-descrip">Para recibir el total de los productos se debe realiar una peticion a '/products' y este devuelve un JSON</span>
             <code>
                 <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">[
                     {
@@ -68,12 +68,33 @@
                 ]</pre>
             </code>
     </article>
+    <h4 id="get-categ">GET de Productos con descuento</h4>
+    <span class="code-descrip">Para recibir el total de los productos se debe realiar una peticion a '/discount' y este devuelve un JSON</span>
+    <code>
+        <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">[
+            {
+                <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">5</span>,
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"ENERGETICA MR BIG"</span>,
+                <span class="hljs-attr">"url_image"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"https://dojiw2m9tvv09.cloudfront.net/11132/product/misterbig3308256.jpg"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1490</span>,
+                <span class="hljs-attr">"discount"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">20</span>,
+                <span class="hljs-attr">"category"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">1</span>
+            },
+            {
+                <span class="hljs-attr">"id"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">8</span>,
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"PISCO ALTO DEL CARMEN 35º"</span>,
+                <span class="hljs-attr">"url_image"</span>: <span class="hljs-string" style="color: rgb(41, 163, 41);">"https://dojiw2m9tvv09.cloudfront.net/11132/product/alto8532.jpg"</span>,
+                <span class="hljs-attr">"price"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">7990</span>,
+                <span class="hljs-attr">"discount"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">10</span>,
+                <span class="hljs-attr">"category"</span>: <span class="hljs-number" style="color: rgb(135, 113, 29);">2</span>
+            }]</pre>
+    </code>
 
     
 
     <article>
         <h4 id="get-categ">GET de Nombres de categorias</h4>
-            <span>Para recibir el total de los productos se debe realiar una peticion a '/category' y este devuelve un JSON</span>
+            <span class="code-descrip">Para recibir el total de los productos se debe realiar una peticion a '/category' y este devuelve un JSON</span>
             <code>
                 <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">[
                     {
@@ -94,7 +115,7 @@
     
     <article>
         <h4 id="get-products-by-category">GET de Productos por categoria</h4>
-            <span>Para recibir todos los productos que pertenecen a una categoria se debe realizar una peticion a '/category/:id' siendo :id el identificador de cada categoria</span>
+            <span class="code-descrip">Para recibir todos los productos que pertenecen a una categoria se debe realizar una peticion a '/category/:id' siendo :id el identificador de cada categoria</span>
             <table>
                 <tr>
                     <td>1</td>
@@ -129,7 +150,7 @@
     
     <article>
         <h4 id="get-search-product">GET de Producto por buscador</h4>
-            <span>Para obtener un producto especifico buscando por su nombre se debe realizar una peticion GET a '/search/:name' siendo name el producto deseado</span>
+            <span class="code-descrip">Para obtener un producto especifico buscando por su nombre se debe realizar una peticion GET a '/search/:name' siendo name el producto deseado</span>
         
             <code>
             <pre class="hljs" style="display: block; overflow-x: auto; background: rgb(19, 21, 19); color: rgb(140, 166, 140); padding: 0.5em;">

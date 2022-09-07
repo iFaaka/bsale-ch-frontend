@@ -3,7 +3,7 @@ const createCategNav = async () => {
   const categList = document.getElementById("categ-list");
 
   const response = await fetch(
-    "https://bsale-back-falvarez.herokuapp.com/category"
+    "https://bs-back-bis.herokuapp.com/category"
   );
   const data = await response.json();
 
@@ -20,7 +20,7 @@ const createCategNav = async () => {
         item.remove();
       });
       createCards(
-        `https://bsale-back-falvarez.herokuapp.com/category/${item.id}`
+        `https://bs-back-bis.herokuapp.com/category/${item.id}`
       );
     });
 
@@ -131,7 +131,7 @@ const createCards = async (url) => {
 };
 
 /* Por default, recibe todos los productos y crea las cards correspondiente */
-createCards(`https://bsale-back-falvarez.herokuapp.com/products`);
+createCards(`https://bs-back-bis.herokuapp.com/products`);
 
 /* Funcion para crear las tarjetas segun el parametro pasado */
 const getAllProd = (url) => {
@@ -139,7 +139,7 @@ const getAllProd = (url) => {
   allCards.forEach((item) => {
     item.remove();
   });
-  createCards(`https://bsale-back-falvarez.herokuapp.com/${url}`);
+  createCards(`https://bs-back-bis.herokuapp.com/${url}`);
 };
 
 /* Agrega eventListener para la categoria de todos los productos */

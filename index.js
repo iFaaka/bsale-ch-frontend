@@ -4,7 +4,13 @@ const urlHost = "https://bsale-back-falvarez.herokuapp.com";
 const createCategNav = async () => {
   const categList = document.getElementById("categ-list");
 
+<<<<<<< HEAD
   const response = await fetch(`${urlHost}/category`);
+=======
+  const response = await fetch(
+    "https://bs-back-bis.herokuapp.com/category"
+  );
+>>>>>>> ed7be7e9476bab3dec659e4871b9bdff80366908
   const data = await response.json();
 
   /* Mapeo las categrias para darles formato y agregarle un eventListener para filtrar los productos segun corresponda */
@@ -19,7 +25,13 @@ const createCategNav = async () => {
       allCards.forEach((item) => {
         item.remove();
       });
+<<<<<<< HEAD
       createCards(`${urlHost}/category/${item.id}`);
+=======
+      createCards(
+        `https://bs-back-bis.herokuapp.com/category/${item.id}`
+      );
+>>>>>>> ed7be7e9476bab3dec659e4871b9bdff80366908
     });
 
     button.appendChild(contentLink);
@@ -129,7 +141,11 @@ const createCards = async (url) => {
 };
 
 /* Por default, recibe todos los productos y crea las cards correspondiente */
+<<<<<<< HEAD
 createCards(`${urlHost}/products`);
+=======
+createCards(`https://bs-back-bis.herokuapp.com/products`);
+>>>>>>> ed7be7e9476bab3dec659e4871b9bdff80366908
 
 /* Funcion para crear las tarjetas segun el parametro pasado */
 const getAllProd = (url) => {
@@ -137,7 +153,11 @@ const getAllProd = (url) => {
   allCards.forEach((item) => {
     item.remove();
   });
+<<<<<<< HEAD
   createCards(`${urlHost}/${url}`);
+=======
+  createCards(`https://bs-back-bis.herokuapp.com/${url}`);
+>>>>>>> ed7be7e9476bab3dec659e4871b9bdff80366908
 };
 
 /* Agrega eventListener para la categoria de todos los productos */

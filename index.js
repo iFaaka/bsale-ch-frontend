@@ -1,10 +1,10 @@
+const urlHost = "https://bsale-back-falvarez.herokuapp.com";
+
 /* Crea la lista de categorias, permitiendo que la aplicacion sea expansible */
 const createCategNav = async () => {
   const categList = document.getElementById("categ-list");
 
-  const response = await fetch(
-    "https://bsale-back-falvarez.herokuapp.com/category"
-  );
+  const response = await fetch(`${urlHost}/category`);
   const data = await response.json();
 
   /* Mapeo las categrias para darles formato y agregarle un eventListener para filtrar los productos segun corresponda */
@@ -19,9 +19,7 @@ const createCategNav = async () => {
       allCards.forEach((item) => {
         item.remove();
       });
-      createCards(
-        `https://bsale-back-falvarez.herokuapp.com/category/${item.id}`
-      );
+      createCards(`${urlHost}/category/${item.id}`);
     });
 
     button.appendChild(contentLink);
@@ -131,7 +129,7 @@ const createCards = async (url) => {
 };
 
 /* Por default, recibe todos los productos y crea las cards correspondiente */
-createCards(`https://bsale-back-falvarez.herokuapp.com/products`);
+createCards(`${urlHost}/products`);
 
 /* Funcion para crear las tarjetas segun el parametro pasado */
 const getAllProd = (url) => {
@@ -139,7 +137,7 @@ const getAllProd = (url) => {
   allCards.forEach((item) => {
     item.remove();
   });
-  createCards(`https://bsale-back-falvarez.herokuapp.com/${url}`);
+  createCards(`${urlHost}/${url}`);
 };
 
 /* Agrega eventListener para la categoria de todos los productos */
